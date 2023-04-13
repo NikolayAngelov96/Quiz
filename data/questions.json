@@ -1,0 +1,13 @@
+[
+    {
+        "id": "0",
+        "title": "In which period John Atanasoff invented the first electronic digital computer",
+        "possibleAnswers": {
+            "A": "1930s",
+            "B": "1940s",
+            "C": "1950s",
+            "D": "1960s"
+        },
+        "correctAnswer": "B"
+    }
+]
