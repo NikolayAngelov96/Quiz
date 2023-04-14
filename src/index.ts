@@ -3,7 +3,7 @@ import {Quiz} from "./Quiz";
 const backgroundElement = document.querySelector(".bg") as HTMLElement
 
 async function loadQuestions() {
-    const res = await fetch("./data/questions.json");
+    const res = await fetch("./data/music.json");
 
     if(!res.ok) {
         throw new Error("Can't load questions")
