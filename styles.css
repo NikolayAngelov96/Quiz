@@ -3,9 +3,10 @@ body {
     margin: 0;
     position: relative;
     min-height: 100vh;
+    background-color: #334155;
 }
 
-/*.splash {*/
+/*.bg {*/
 /*    background-image: url("");*/
 /*    background-size: cover;*/
 /*    position: absolute;*/
@@ -29,16 +30,17 @@ body {
 }
 
 .index {
-    width: 4.4vw;
-    height: 9vh;
-    line-height: 4.4vh;
+    width: 2.2vw;
+    height: 4.5vh;
+    line-height: 4.0vh;
     text-align: center;
     color: #07162b;
     background-color: #a6ce39;
     border-radius: 50%;
     position: absolute;
-    left: 1vw;
-    top: 1.7vw;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
 }
 
 .option.selected {
@@ -100,6 +102,7 @@ body {
     font-size: 3.5vh;
     width: 70vw;
     font-weight: 600;
+    color: white;
 }
 
 .results {
