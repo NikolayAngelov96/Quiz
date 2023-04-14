@@ -27,12 +27,22 @@ export class Quiz {
     }
 
     private createQuestion({title, possibleAnswers}: Question) {
-        const questionEl = createElement<HTMLDivElement>("div", {className: "container"},
+        const questionEl = this.createTitle(title);
+
+        const answersContainer = this.createAnswerOptions(possibleAnswers);
+
+        this.container.replaceChildren(questionEl, answersContainer);
+    }
+
+    private createTitle(title: string) {
+        return createElement<HTMLDivElement>("div", {className: "container"},
             createElement<HTMLSpanElement>("span", {className: "number"}, `${this.currentQuestionIndex + 1}`),
             createElement<HTMLParagraphElement>("p", {className: "question"}, title)
         );
+    }
 
-        const answersContainer = createElement<HTMLDivElement>("div", {className: "option-container"});
+    private createAnswerOptions(possibleAnswers: Record<string, string>[]) {
+        const container = createElement<HTMLDivElement>("div", {className: "option-container"});
 
         for (let choice in possibleAnswers) {
             const el = createElement<HTMLButtonElement>("button", {className: "option"},
@@ -42,9 +52,9 @@ export class Quiz {
 
             el.dataset.choice = choice;
 
-            answersContainer.appendChild(el);
+            container.appendChild(el);
         }
 
-        this.container.replaceChildren(questionEl, answersContainer);
+        return container;
     }
 }
