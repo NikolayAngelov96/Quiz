@@ -1,0 +1,117 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+/*.splash {*/
+/*    background-image: url("");*/
+/*    background-size: cover;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.option {
+    position: relative;
+    width: 36vw;
+    height: 9vh;
+    border: none;
+    border-radius: 9px;
+    font-size: 2.5vh;
+    background-color: #07162b;
+    color: white;
+    box-shadow: 6px 6px 0 0 #b1e3dd;
+}
+
+.index {
+    width: 4.4vw;
+    height: 9vh;
+    line-height: 4.4vh;
+    text-align: center;
+    color: #07162b;
+    background-color: #a6ce39;
+    border-radius: 50%;
+    position: absolute;
+    left: 1vw;
+    top: 1.7vw;
+}
+
+.option.selected {
+    box-shadow: none;
+    border: 3px solid white;
+    background-color: #a6ce39;
+    color: white;
+}
+
+.selected .index {
+    background-color: white;
+}
+
+.option-container {
+    display: grid;
+    margin: auto;
+    margin-top: 3vh;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5vh;
+    column-gap: 7vw;
+    width: 81vw;
+}
+
+.container {
+    font-size: 16pt;
+    margin-top: 25vh;
+    display: grid;
+    height: 28vh;
+    grid-template-columns: 15vw auto;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.container:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.number {
+    background-color: #07162b;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 1rem;
+    color: #a6ce39;
+    display: block;
+    width: 11vw;
+    height: 8vh;
+    font-size: 4vh;
+    line-height: 8vh;
+}
+
+.question {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    display: block;
+    line-height: 4.5vh;
+    font-size: 3.5vh;
+    width: 70vw;
+    font-weight: 600;
+}
+
+.results {
+    font-size: 6vh;
+    font-weight: bold;
+}
+
+.result-section {
+    margin-top: 35vh;
+    text-align: center;
+}
+
+.result-section > button {
+    margin-top: 10vh;
+}
