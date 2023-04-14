@@ -30,6 +30,7 @@ export class Quiz {
         const questionEl = this.createTitle(title);
 
         const answersContainer = this.createAnswerOptions(possibleAnswers);
+        answersContainer.addEventListener("click", this.onChooseAnswer.bind(this));
 
         this.container.replaceChildren(questionEl, answersContainer);
     }
@@ -56,5 +57,15 @@ export class Quiz {
         }
 
         return container;
+    }
+
+    private onChooseAnswer({target}: MouseEvent) {
+        if (target instanceof HTMLButtonElement && target.parentElement !== null) {
+            const choice = target.dataset.choice;
+
+            if (choice) {
+                this.answers.push(choice);
+            }
+        }
     }
 }
