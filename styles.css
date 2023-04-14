@@ -29,6 +29,11 @@ body {
     box-shadow: 6px 6px 0 0 #b1e3dd;
 }
 
+.option:hover {
+    cursor: pointer;
+    background-color: #a6ce39;
+}
+
 .index {
     width: 2.2vw;
     height: 4.5vh;
@@ -108,6 +113,7 @@ body {
 .results {
     font-size: 6vh;
     font-weight: bold;
+    color: white;
 }
 
 .result-section {
