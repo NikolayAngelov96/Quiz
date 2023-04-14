@@ -78,7 +78,7 @@ export class Quiz {
     private nextQuestion() {
         if (this.currentQuestionIndex == this.questions.length - 1) {
             // TODO: Handle end result
-            alert(`Display end result: ${this.getCountOfCorrectAnswers()}`);
+            this.displayEndResult();
         } else {
             this.currentQuestionIndex++;
             this.createQuestion(this.questions[this.currentQuestionIndex]);
@@ -88,12 +88,24 @@ export class Quiz {
     private getCountOfCorrectAnswers() {
         let count = 0;
 
-        for(let i = 0; i < this.answers.length; i++) {
-            if(this.answers[i] == this.correctAnswers[i]) {
+        for (let i = 0; i < this.answers.length; i++) {
+            if (this.answers[i] == this.correctAnswers[i]) {
                 count++;
             }
         }
 
         return count;
+    }
+
+    private displayEndResult() {
+        const totleQuestions = this.questions.length;
+        const correctlyGuessedQuestions = this.getCountOfCorrectAnswers();
+
+        const endSection = createElement<HTMLDivElement>("div", {className: "result-section"},
+            createElement<HTMLParagraphElement>("p", {className: "results"}, `${correctlyGuessedQuestions}/${totleQuestions}`),
+            createElement<HTMLButtonElement>("button", {className: "option"}, "Try again")
+        );
+
+        this.container.replaceChildren(endSection);
     }
 }
