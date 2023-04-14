@@ -1,0 +1,233 @@
+[
+    {
+        "id": "0",
+        "title": "Какъв е бул Ларс Улрих преди да стане барабанист на Металика?",
+        "possibleAnswers": {
+            "A": "Рибар",
+            "B": "Тенесист",
+            "C": "Продавач на плочи",
+            "D": "Каскадьор"
+        },
+        "correctAnswer": "B"
+    },
+    {
+        "id": "1",
+        "title": "През коя година Spice Girls издават хитовете 'Viva forever', 'Stop', 'Too much'?",
+        "possibleAnswers": {
+            "A": "2001",
+            "B": "1998",
+            "C": "1999",
+            "D": "2000"
+        },
+        "correctAnswer": "B"
+    },
+    {
+        "id": "2",
+        "title": "Какъв е бил псевдонима на Дейвид Джоунс?",
+        "possibleAnswers": {
+            "A": "Стинг",
+            "B": "Мерелин Менсън",
+            "C": "Дейвид Боуи",
+            "D": "Острието"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "3",
+        "title": "На какво започва да свири Дейвид Боуи когато навършва 12 години?",
+        "possibleAnswers": {
+            "A": "Саксофон",
+            "B": "Пиано",
+            "C": "Виола",
+            "D": "Китара"
+        },
+        "correctAnswer": "A"
+    },
+    {
+        "id": "4",
+        "title": "Коя песен използва BBC за предаването си на луната?",
+        "possibleAnswers": {
+            "A": "Twist and Shout",
+            "B": "Blue Moon",
+            "C": "Shadow of the moon",
+            "D": "Space oddity"
+        },
+        "correctAnswer": "D"
+    },
+    {
+        "id": "5",
+        "title": "По време на концерт през 2004 година в Осло, Дейвид Боуи е ударен в окото от?",
+        "possibleAnswers": {
+            "A": "Близалка",
+            "B": "Капачка от бутилка",
+            "C": "Стотинка",
+            "D": "Гълъб"
+        },
+        "correctAnswer": "A"
+    },
+    {
+        "id": "6",
+        "title": "Billboard 200 има топ 10 албума на всички времена. Кой е на първо място?",
+        "possibleAnswers": {
+            "A": "Thriller - Michael Jackson",
+            "B": "21 - Adele",
+            "C": "Born in the USA - Bruce Springsteen",
+            "D": "Sound of music - soundtrack"
+        },
+        "correctAnswer": "B"
+    },
+    {
+        "id": "7",
+        "title": "Кой изпълнител има най-много албуми дебютирали на първо място?",
+        "possibleAnswers": {
+            "A": "Kanye West",
+            "B": "Beyonce",
+            "C": "Eminem",
+            "D": "Justin Bieber"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "8",
+        "title": "Кой изпълнител има най-много албуми в топ 100 за всички времена?",
+        "possibleAnswers": {
+            "A": "Barbra Streisand",
+            "B": "Frank Sinatra",
+            "C": "The Beatles",
+            "D": "The Rolling Stones"
+        },
+        "correctAnswer": "D"
+    },
+    {
+        "id": "9",
+        "title": "Жителите на Габон дават кралска титла на кой изпълнител като практически го/я правят крал/кралица на града?",
+        "possibleAnswers": {
+            "A": "Akon",
+            "B": "Rihanna",
+            "C": "Michael Jackson",
+            "D": "Bob Marley"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "10",
+        "title": "На коя група Ian Gillan не е бил член?",
+        "possibleAnswers": {
+            "A": "Deep Purple",
+            "B": "Ian Gillan Band",
+            "C": "Black Sabbath",
+            "D": "Blind Faith"
+        },
+        "correctAnswer": "D"
+    },
+    {
+        "id": "11",
+        "title": "Кой е бил най-възрастният Бийтълс?",
+        "possibleAnswers": {
+            "A": "Paul McCartney",
+            "B": "Ringo Starr",
+            "C": "John Lennon",
+            "D": "George Harrison"
+        },
+        "correctAnswer": "B"
+    },
+    {
+        "id": "12",
+        "title": "Хита на Dire Straits 'Money for nothing', кой пее беквокали?",
+        "possibleAnswers": {
+            "A": "George Harrison",
+            "B": "Eric Clapton",
+            "C": "Sting",
+            "D": "Phil Collins"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "13",
+        "title": "Албума на Michael Jackson - 'Thriller' включва и един дует с кой изпълнител?",
+        "possibleAnswers": {
+            "A": "Mick Jagger",
+            "B": "Stevie Wonder",
+            "C": "Paul McCartney",
+            "D": "Freddie Mercury"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "14",
+        "title": "Кой е първият хит на Елвис Пресли?",
+        "possibleAnswers": {
+            "A": "Heartbreak Hotel",
+            "B": "Santa Claus is back in town",
+            "C": "Jailhouse Rock",
+            "D": "Return to Sender"
+        },
+        "correctAnswer": "A"
+    },
+    {
+        "id": "15",
+        "title": "Коя група записва албум в къща в Калифорния, където се е случило масово убийство?",
+        "possibleAnswers": {
+            "A": "Nine inch Nails",
+            "B": "Marilyn Manson",
+            "C": "Slayer",
+            "D": "The Police"
+        },
+        "correctAnswer": "A"
+    },
+    {
+        "id": "16",
+        "title": "Кой музикант е депортиран от Япония през 80те години за притежание на марихуана?",
+        "possibleAnswers": {
+            "A": "Bob Marley",
+            "B": "Paul McCartney",
+            "C": "Snoop Dogg",
+            "D": "Ozzy Osbourne"
+        },
+        "correctAnswer": "B"
+    },
+    {
+        "id": "17",
+        "title": "Коя от следните певици е кръстница на двама от синовете на Elton John?",
+        "possibleAnswers": {
+            "A": "Celine Dion",
+            "B": "Whitney Houston",
+            "C": "Lady Gaga",
+            "D": "Madonna"
+        },
+        "correctAnswer": "C"
+    },
+    {
+        "id": "18",
+        "title": "В началото на 2019г. Ариана Гранде държи първите 3 места от Билборд топ 100. Кой е единствения изпълнител, който го е правил преди това?",
+        "possibleAnswers": {
+            "A": "The Beatles",
+            "B": "Drake",
+            "C": "Michael Jackson",
+            "D": "Taylor Swift"
+        },
+        "correctAnswer": "A"
+    },
+    {
+        "id": "19",
+        "title": "Кой изпълнител е роден в Хавай?",
+        "possibleAnswers": {
+            "A": "Rihanna",
+            "B": "Marilyn Manson",
+            "C": "Arianna Grande",
+            "D": "Bruno Mars"
+        },
+        "correctAnswer": "D"
+    },
+    {
+        "id": "20",
+        "title": "Кой е оригиналният барабанист на Нирвана?",
+        "possibleAnswers": {
+            "A": "Dave Grohl",
+            "B": "Chad Channing",
+            "C": "Pat Smear",
+            "D": "Dale Crover"
+        },
+        "correctAnswer": "B"
+    }
+]
