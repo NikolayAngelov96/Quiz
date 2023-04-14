@@ -3,7 +3,7 @@ import {createElement} from "./utils/helperFunctions";
 
 export class Quiz {
     private container: HTMLElement;
-    private questions: Question[];
+    private readonly questions: Question[];
     private answers: string[];
     private correctAnswers!: string[];
     private currentQuestionIndex: number;
@@ -67,6 +67,7 @@ export class Quiz {
                 target.classList.add("selected");
                 this.answers.push(choice);
 
+                document.querySelectorAll("button").forEach(btn => btn.disabled = true);
                 setTimeout(() => {
                     this.nextQuestion();
                 }, 500);
@@ -75,11 +76,24 @@ export class Quiz {
     }
 
     private nextQuestion() {
-        if(this.currentQuestionIndex == this.questions.length) {
+        if (this.currentQuestionIndex == this.questions.length - 1) {
             // TODO: Handle end result
+            alert(`Display end result: ${this.getCountOfCorrectAnswers()}`);
         } else {
             this.currentQuestionIndex++;
             this.createQuestion(this.questions[this.currentQuestionIndex]);
         }
+    }
+
+    private getCountOfCorrectAnswers() {
+        let count = 0;
+
+        for(let i = 0; i < this.answers.length; i++) {
+            if(this.answers[i] == this.correctAnswers[i]) {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
