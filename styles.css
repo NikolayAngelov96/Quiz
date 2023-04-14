@@ -31,7 +31,7 @@ body {
 
 .option:hover {
     cursor: pointer;
-    background-color: #a6ce39;
+    background-color: orange;
 }
 
 .index {
@@ -48,10 +48,17 @@ body {
     transform: translateY(-50%);
 }
 
-.option.selected {
+.option.correct {
     box-shadow: none;
     border: 3px solid white;
     background-color: #a6ce39;
+    color: white;
+}
+
+.option.wrong {
+    box-shadow: none;
+    border: 3px solid white;
+    background-color: red;
     color: white;
 }
 

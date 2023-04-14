@@ -64,13 +64,15 @@ export class Quiz {
             const choice = target.dataset.choice;
 
             if (choice) {
-                target.classList.add("selected");
                 this.answers.push(choice);
 
                 document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+
+                this.checkAnswer(target);
+
                 setTimeout(() => {
                     this.nextQuestion();
-                }, 500);
+                }, 1000);
             }
         }
     }
@@ -107,5 +109,19 @@ export class Quiz {
         );
 
         this.container.replaceChildren(endSection);
+    }
+
+    private checkAnswer(button: HTMLButtonElement) {
+        const chosedAnswer = this.answers[this.answers.length - 1];
+        const correctAnswer = this.questions[this.currentQuestionIndex].correctAnswer;
+
+        button.style.boxShadow = "none";
+
+        if(chosedAnswer === correctAnswer) {
+            button.classList.add("correct")
+        } else {
+            button.classList.add("wrong");
+            (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
+        }
     }
 }
