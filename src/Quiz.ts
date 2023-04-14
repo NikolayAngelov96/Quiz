@@ -64,8 +64,22 @@ export class Quiz {
             const choice = target.dataset.choice;
 
             if (choice) {
+                target.classList.add("selected");
                 this.answers.push(choice);
+
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, 500);
             }
+        }
+    }
+
+    private nextQuestion() {
+        if(this.currentQuestionIndex == this.questions.length) {
+            // TODO: Handle end result
+        } else {
+            this.currentQuestionIndex++;
+            this.createQuestion(this.questions[this.currentQuestionIndex]);
         }
     }
 }
