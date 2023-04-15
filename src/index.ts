@@ -1,5 +1,6 @@
 import {Quiz} from "./Quiz";
-import {Question} from "./types/Question";
+import {Question} from "./interfaces/Question";
+import {QuestionBuilder} from "./QuestionBuilder";
 
 const backgroundElement = document.querySelector(".bg") as HTMLElement
 
@@ -16,7 +17,8 @@ async function loadQuestions(): Promise<Question[]> {
 async function startQuiz() {
     const data = await loadQuestions();
     
-    new Quiz(data, backgroundElement);
+    const builder = new QuestionBuilder();
+    new Quiz(data, backgroundElement, builder);
 }
 
 startQuiz();

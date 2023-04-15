@@ -1,5 +1,6 @@
-import {Question} from "./types/Question";
+import {Question} from "./interfaces/Question";
 import {createElement} from "./utils/helperFunctions";
+import {QuestionBuilder} from "./QuestionBuilder";
 
 export class Quiz {
     private container: HTMLElement;
@@ -8,11 +9,15 @@ export class Quiz {
     private correctAnswers!: string[];
     private currentQuestionIndex: number;
 
-    constructor(data: Question[], backgroundContainer: HTMLElement) {
+    private builder: QuestionBuilder;
+
+    constructor(data: Question[], backgroundContainer: HTMLElement, builder: QuestionBuilder) {
         this.container = backgroundContainer;
         this.questions = data;
         this.answers = [];
         this.currentQuestionIndex = 0;
+
+        this.builder = builder;
 
         this.generateCorrectAnswers();
         this.createQuestion(this.questions[this.currentQuestionIndex]);
@@ -26,37 +31,18 @@ export class Quiz {
         }
     }
 
-    private createQuestion({title, possibleAnswers}: Question) {
-        const questionEl = this.createTitle(title);
+    private createQuestion(questionData: Question) {
+        const question = this.createQuestionWithOptions(questionData)
 
-        const answersContainer = this.createAnswerOptions(possibleAnswers);
-        answersContainer.addEventListener("click", this.onChooseAnswer.bind(this));
-
-        this.container.replaceChildren(questionEl, answersContainer);
+        this.container.replaceChildren(question);
     }
 
-    private createTitle(title: string) {
-        return createElement<HTMLDivElement>("div", {className: "container"},
-            createElement<HTMLSpanElement>("span", {className: "number"}, `${this.currentQuestionIndex + 1}`),
-            createElement<HTMLParagraphElement>("p", {className: "question"}, title)
-        );
-    }
 
-    private createAnswerOptions(possibleAnswers: Record<string, string>[]) {
-        const container = createElement<HTMLDivElement>("div", {className: "option-container"});
-
-        for (let choice in possibleAnswers) {
-            const el = createElement<HTMLButtonElement>("button", {className: "option"},
-                createElement<HTMLSpanElement>("span", {className: "index"}, choice),
-                createElement<HTMLSpanElement>("span", {}, possibleAnswers[choice])
-            );
-
-            el.dataset.choice = choice;
-
-            container.appendChild(el);
-        }
-
-        return container;
+    private createQuestionWithOptions({title, possibleAnswers}: Question): HTMLDivElement {
+        return this.builder
+            .addTitle(title, this.currentQuestionIndex + 1)
+            .addOptions(possibleAnswers, this.onChooseAnswer.bind(this))
+            .getQuestion();
     }
 
     private onChooseAnswer({target}: MouseEvent) {
@@ -117,7 +103,7 @@ export class Quiz {
 
         button.style.boxShadow = "none";
 
-        if(chosedAnswer === correctAnswer) {
+        if (chosedAnswer === correctAnswer) {
             button.classList.add("correct")
         } else {
             button.classList.add("wrong");
