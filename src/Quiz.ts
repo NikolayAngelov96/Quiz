@@ -1,6 +1,7 @@
 import {Question} from "./interfaces/Question";
 import {createElement} from "./utils/helperFunctions";
 import {QuestionBuilder} from "./QuestionBuilder";
+import {Builder} from "./interfaces/Builder";
 
 export class Quiz {
     private container: HTMLElement;
@@ -9,9 +10,9 @@ export class Quiz {
     private correctAnswers!: string[];
     private currentQuestionIndex: number;
 
-    private builder: QuestionBuilder;
+    private builder: Builder;
 
-    constructor(data: Question[], backgroundContainer: HTMLElement, builder: QuestionBuilder) {
+    constructor(data: Question[], backgroundContainer: HTMLElement, builder: Builder) {
         this.container = backgroundContainer;
         this.questions = data;
         this.answers = [];

@@ -48,7 +48,7 @@ export class QuestionBuilder implements Builder {
         this.question = createElement<HTMLDivElement>("div");
     }
 
-    getQuestion(): HTMLDivElement {
+    public getQuestion(): HTMLDivElement {
         const element = this.question;
         this.reset();
         return element;
