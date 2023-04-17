@@ -1,6 +1,5 @@
 import {Question} from "./interfaces/Question";
 import {createElement} from "./utils/helperFunctions";
-import {QuestionBuilder} from "./QuestionBuilder";
 import {Builder} from "./interfaces/Builder";
 
 export class Quiz {
@@ -33,7 +32,13 @@ export class Quiz {
     }
 
     private createQuestion(questionData: Question) {
-        const question = this.createQuestionWithOptions(questionData)
+        let question: HTMLDivElement;
+
+        if(this.isQuestionWithOptions(questionData)) {
+            question = this.createQuestionWithOptions(questionData);
+        } else {
+            question = this.createOpenEndedQuestion(questionData);
+        }
 
         this.container.replaceChildren(question);
     }
@@ -43,6 +48,13 @@ export class Quiz {
         return this.builder
             .addTitle(title, this.currentQuestionIndex + 1)
             .addOptions(possibleAnswers, this.onChooseAnswer.bind(this))
+            .getQuestion();
+    }
+
+    private createOpenEndedQuestion({title}: Question) {
+        return this.builder
+            .addTitle(title, this.currentQuestionIndex + 1)
+            .addAnswerInput()
             .getQuestion();
     }
 
@@ -110,5 +122,9 @@ export class Quiz {
             button.classList.add("wrong");
             (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
         }
+    }
+
+    private isQuestionWithOptions(question: Question): boolean {
+        return "possibleAnswers" in question;
     }
 }

@@ -40,8 +40,10 @@ export class QuestionBuilder implements Builder {
         return this;
     }
 
-    public addAnswerInput() {
+    public addAnswerInput(): QuestionBuilder {
         throw new Error("Not implemented yet!");
+
+        return this;
     }
 
     public reset() {
