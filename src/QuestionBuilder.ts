@@ -32,7 +32,7 @@ export class QuestionBuilder implements Builder {
 
             container.appendChild(el);
         }
-        
+
         container.addEventListener("click", callbackListener);
 
         this.question.appendChild(container);
@@ -40,8 +40,14 @@ export class QuestionBuilder implements Builder {
         return this;
     }
 
-    public addAnswerInput(): QuestionBuilder {
-        throw new Error("Not implemented yet!");
+    public addAnswerInput(onSubmitEventListener: (e: SubmitEvent) => void): QuestionBuilder {
+        const form = createElement<HTMLFormElement>("form", {},
+            createElement<HTMLInputElement>("input", {className: "answer-input"})
+        );
+
+        form.addEventListener("submit", onSubmitEventListener);
+
+        this.question.appendChild(form);
 
         return this;
     }

@@ -54,7 +54,7 @@ export class Quiz {
     private createOpenEndedQuestion({title}: Question) {
         return this.builder
             .addTitle(title, this.currentQuestionIndex + 1)
-            .addAnswerInput()
+            .addAnswerInput(this.onFormSubmit.bind(this))
             .getQuestion();
     }
 
@@ -74,6 +74,12 @@ export class Quiz {
                 }, 1000);
             }
         }
+    }
+
+    private onFormSubmit(e: SubmitEvent) {
+        e.preventDefault();
+
+        console.log("IT works");
     }
 
     private nextQuestion() {
