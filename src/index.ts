@@ -5,7 +5,7 @@ import {QuestionBuilder} from "./QuestionBuilder";
 const backgroundElement = document.querySelector(".bg") as HTMLElement
 
 async function loadQuestions(): Promise<Question[]> {
-    const res = await fetch("./data/music.json");
+    const res = await fetch("./data/questions.json");
 
     if(!res.ok) {
         throw new Error("Can't load questions")
