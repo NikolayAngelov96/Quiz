@@ -3,7 +3,6 @@ type ElementType = keyof HTMLElementTagNameMap;
 export function createElement<T>(type: ElementType, props?: Record<string, any>, ...content: any[]) {
     const element = document.createElement(type);
 
-    console.log(props);
     if (props) {
         for (let propName in props) {
             if (propName.startsWith("on")) {
