@@ -41,8 +41,9 @@ export class QuestionBuilder implements Builder {
     }
 
     public addAnswerInput(onSubmitEventListener: (e: SubmitEvent) => void): QuestionBuilder {
-        const form = createElement<HTMLFormElement>("form", {},
-            createElement<HTMLInputElement>("input", {className: "answer-input"})
+        const form = createElement<HTMLFormElement>("form", {className: "form"},
+            createElement<HTMLInputElement>("input", {className: "answer-input"}),
+            createElement<HTMLButtonElement>("button", {}, "Submit")
         );
 
         form.addEventListener("submit", onSubmitEventListener);
