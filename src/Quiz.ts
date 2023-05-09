@@ -126,21 +126,31 @@ export class Quiz {
         const chosedAnswer = this.answers[this.answers.length - 1];
         const correctAnswer = this.questions[this.currentQuestionIndex].correctAnswer;
 
-        if (element instanceof HTMLButtonElement && chosedAnswer.length > 1) {
-            element.style.boxShadow = "none";
+        const isAnswerCorrect = chosedAnswer === correctAnswer;
 
-            if (chosedAnswer === correctAnswer) {
-                element.classList.add("correct")
-            } else {
-                element.classList.add("wrong");
-                (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
+        this.styleElementOnAnswer(element, isAnswerCorrect, correctAnswer);
+    }
+
+    private styleElementOnAnswer(element: HTMLButtonElement | HTMLFormElement, isAnswerCorrect: boolean, correctAnswer: string) {
+        if (element instanceof HTMLButtonElement) {
+            element.style.boxShadow = "none";
+            switch(isAnswerCorrect) {
+                case true:
+                    element.classList.add("correct");
+                    break;
+                case false:
+                    element.classList.add("wrong");
+                    (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
+                    break;
+                default: throw new Error("Cannot determine is answer correct or not!");
             }
         } else if (element instanceof HTMLFormElement) {
-            // TODO: check if answer is correct or not and show it to the user;
-            console.log("chosed answer: ", chosedAnswer);
-            console.log("correct answer: ", correctAnswer);
+            // TODO: style the border of the input element
+            //       display correct answer
+            //       color of answer should be green
+            const paragraphElement = createElement<HTMLParagraphElement>("p", {}, isAnswerCorrect ? "correct" : "wrong");
+            element.appendChild(paragraphElement);
         }
-
     }
 
     private isQuestionWithOptions(question: Question): boolean {
