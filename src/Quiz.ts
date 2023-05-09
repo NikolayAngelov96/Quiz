@@ -79,7 +79,13 @@ export class Quiz {
     private onFormSubmit(e: SubmitEvent) {
         e.preventDefault();
 
-        console.log("IT works");
+        if(e.target && e.target instanceof HTMLFormElement) {
+            const answer = e.target.querySelector("input")?.value.toLowerCase();
+            if (answer) {
+                this.answers.push(answer);
+                this.checkAnswer(e.target);
+            }
+        }
     }
 
     private nextQuestion() {
@@ -116,18 +122,25 @@ export class Quiz {
         this.container.replaceChildren(endSection);
     }
 
-    private checkAnswer(button: HTMLButtonElement) {
+    private checkAnswer(element: HTMLButtonElement | HTMLFormElement) {
         const chosedAnswer = this.answers[this.answers.length - 1];
         const correctAnswer = this.questions[this.currentQuestionIndex].correctAnswer;
 
-        button.style.boxShadow = "none";
+        if (element instanceof HTMLButtonElement && chosedAnswer.length > 1) {
+            element.style.boxShadow = "none";
 
-        if (chosedAnswer === correctAnswer) {
-            button.classList.add("correct")
-        } else {
-            button.classList.add("wrong");
-            (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
+            if (chosedAnswer === correctAnswer) {
+                element.classList.add("correct")
+            } else {
+                element.classList.add("wrong");
+                (document.querySelector(`[data-choice="${correctAnswer}"]`) as HTMLButtonElement).classList.add("correct");
+            }
+        } else if (element instanceof HTMLFormElement) {
+            // TODO: check if answer is correct or not and show it to the user;
+            console.log("chosed answer: ", chosedAnswer);
+            console.log("correct answer: ", correctAnswer);
         }
+
     }
 
     private isQuestionWithOptions(question: Question): boolean {
