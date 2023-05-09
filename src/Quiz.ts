@@ -84,6 +84,10 @@ export class Quiz {
             if (answer) {
                 this.answers.push(answer);
                 this.checkAnswer(e.target);
+
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, 1000);
             }
         }
     }
@@ -145,10 +149,20 @@ export class Quiz {
                 default: throw new Error("Cannot determine is answer correct or not!");
             }
         } else if (element instanceof HTMLFormElement) {
-            // TODO: style the border of the input element
-            //       display correct answer
-            //       color of answer should be green
-            const paragraphElement = createElement<HTMLParagraphElement>("p", {}, isAnswerCorrect ? "correct" : "wrong");
+            let text = isAnswerCorrect ? "Congrats you're answer is correct" : "Oops! Correct answer is: ";
+            let classList;
+
+            switch(isAnswerCorrect) {
+                case true:
+                    classList = "correct";
+                    break;
+                case false:
+                    classList = "wrong";
+                    text += `${correctAnswer}`;
+                    break;
+                default: throw new Error("Cannot determine is answer right or wrong");
+            }
+            const paragraphElement = createElement<HTMLParagraphElement>("p", {className: classList}, text);
             element.appendChild(paragraphElement);
         }
     }

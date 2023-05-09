@@ -64,6 +64,16 @@ body {
     color: white;
 }
 
+p.correct {
+    color: #a6ce39;
+    text-transform: capitalize;
+}
+
+p.wrong {
+    color: red;
+    text-transform: capitalize;
+}
+
 .selected .index {
     background-color: white;
 }
