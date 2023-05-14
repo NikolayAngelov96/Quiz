@@ -83,11 +83,12 @@ export class Quiz {
             const answer = e.target.querySelector("input")?.value.toLowerCase();
             if (answer) {
                 this.answers.push(answer);
+
                 this.checkAnswer(e.target);
 
                 setTimeout(() => {
                     this.nextQuestion();
-                }, 1000);
+                }, 1500);
             }
         }
     }
