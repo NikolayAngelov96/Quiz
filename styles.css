@@ -67,11 +67,13 @@ body {
 p.correct {
     color: #a6ce39;
     text-transform: capitalize;
+    font-size: 1.5rem;
 }
 
 p.wrong {
     color: red;
     text-transform: capitalize;
+    font-size: 1.5rem;
 }
 
 .selected .index {
