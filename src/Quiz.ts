@@ -119,9 +119,15 @@ export class Quiz {
         const totleQuestions = this.questions.length;
         const correctlyGuessedQuestions = this.getCountOfCorrectAnswers();
 
+        const tryAgainHandler = () => {
+            this.answers = [];
+            this.currentQuestionIndex = 0;
+            this.createQuestion(this.questions[this.currentQuestionIndex]);
+        };
+
         const endSection = createElement<HTMLDivElement>("div", {className: "result-section"},
             createElement<HTMLParagraphElement>("p", {className: "results"}, `${correctlyGuessedQuestions}/${totleQuestions}`),
-            createElement<HTMLButtonElement>("button", {className: "option"}, "Try again")
+            createElement<HTMLButtonElement>("button", {className: "option", onClick: tryAgainHandler}, "Try again")
         );
 
         this.container.replaceChildren(endSection);
